@@ -47,9 +47,9 @@ export class RegistrationPage implements OnInit {
     this.signupForm = this.formBuilder.group({
       fullName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
+      password: ['', [Validators.required]],
       confirmPassword: ['', Validators.required],
-      phoneNumber: ['', Validators.required, Validators.maxLength(10)],
+      phoneNumber: ['', Validators.required],
     });
     // console.log('--------------------', this.signupForm.get('fullName'));
   }
@@ -117,6 +117,8 @@ export class RegistrationPage implements OnInit {
       // }, 2000);
       return user;
     } else {
+      this.toastService.showToast('verify form');
+
       return;
     }
   }

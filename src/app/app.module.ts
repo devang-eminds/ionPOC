@@ -19,6 +19,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage';
+import { DashboardPage } from './dashboard/dashboard.page';
 
 const firebaseConfig = {
   apiKey: 'AIzaSyBklWbYyyB40od_xBMTEwk6KO7Z3-KZnP8',
@@ -29,7 +30,9 @@ const firebaseConfig = {
   appId: '1:579242381740:web:dc11bf8a66eedc48b62a09',
   measurementId: 'G-V6L2RXEZC9',
 };
-
+// if(this.auth.isAuthenticated()){
+//   this.defaultRoute = '/app/dashboard'
+// }
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -42,7 +45,7 @@ const firebaseConfig = {
     RouterModule.forChild([
       {
         path: '',
-        component: LoginPage,
+        component: localStorage.getItem('ionPOC_auth_token')  ? DashboardPage : LoginPage,
       },
     ]),
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
