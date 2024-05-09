@@ -1,0 +1,91 @@
+{
+    "banners": [
+      {
+        "imageSrc": "../../assets/dashboard/banner (5).jpg",
+        "altText": "Banner 1"
+      },
+      {
+        "imageSrc": "../../assets/dashboard/banner (4).jpg",
+        "altText": "Banner 2"
+      },
+      {
+        "imageSrc": "../../assets/dashboard/banner (1).jpg",
+        "altText": "Banner 3"
+      }
+    ],
+    "cards": [
+      {
+        "title": "Featured Products",
+        "icon": "pricetags-outline",
+        "items": [
+          {
+            "title": "Smartphone",
+            "description": "The latest smartphone model with advanced features."
+          },
+          {
+            "title": "Laptop",
+            "description": "High-performance laptop with a sleek design."
+          },
+          {
+            "title": "Smartwatch",
+            "description": "Stay connected with the latest smartwatch."
+          }
+        ]
+      },
+      {
+        "title": "Recent Orders",
+        "icon": "cart-outline",
+        "items": [
+          {
+            "title": "Order #12345",
+            "description": "Smartphone - Quantity: 1"
+          },
+          {
+            "title": "Order #12346",
+            "description": "Laptop - Quantity: 2"
+          },
+          {
+            "title": "Order #12347",
+            "description": "Smartwatch - Quantity: 3"
+          }
+        ]
+      },
+      {
+        "title": "Statistics",
+        "icon": "stats-chart-outline",
+        "items": [
+          {
+            "title": "Sales",
+            "description": "Total sales: $10,000"
+          },
+          {
+            "title": "Visitors",
+            "description": "Total visitors: 1000"
+          },
+          {
+            "title": "Orders",
+            "description": "Total orders: 50"
+          }
+        ]
+      },
+      {
+        "title": "Notifications",
+        "icon": "notifications-outline",
+        "items": [
+          {
+            "title": "Order Shipped",
+            "description": "Your order #12345 has been shipped."
+          },
+          {
+            "title": "Order Delivered",
+            "description": "Your order #12346 has been delivered."
+          },
+          {
+            "title": "New Offer",
+            "description": "Check out our new offers on smartphones!"
+          }
+        ]
+      }
+    ]
+  }
+  

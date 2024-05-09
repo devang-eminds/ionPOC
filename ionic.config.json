@@ -1,0 +1,8 @@
+{
+  "name": "ionPOC",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "proxies": "proxy.conf.json"
+}
