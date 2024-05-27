@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 import { RegistrationPage } from './registration.page';
 import { ToastService } from '../../service/toast.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { RouterModule } from '@angular/router';
+// import { RouterModule } from '@angular/router';
 
 const mockAuth = {
   createUserWithEmailAndPassword: jasmine.createSpy('createUserWithEmailAndPassword').and.returnValue(Promise.resolve({})),
@@ -22,7 +22,7 @@ describe('RegistrationPage', () => {
       declarations: [RegistrationPage],
       imports: [
         ReactiveFormsModule,
-        RouterModule,
+        RouterTestingModule,
         IonicModule.forRoot()
       ],
       providers: [
