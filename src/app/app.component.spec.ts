@@ -3,7 +3,8 @@ import { IonicModule } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AuthService } from './service/authentication.service';
 import { ActionSheetController } from '@ionic/angular';
-import { RouterTestingModule } from '@angular/router/testing';
+// import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -20,7 +21,7 @@ describe('AppComponent', () => {
 
     TestBed.configureTestingModule({
       declarations: [AppComponent],
-      imports: [IonicModule.forRoot(), RouterTestingModule],
+      imports: [IonicModule.forRoot(), RouterModule],
       providers: [
         { provide: AuthService, useValue: authServiceSpy },
         { provide: ActionSheetController, useValue: actionSheetControllerSpy },

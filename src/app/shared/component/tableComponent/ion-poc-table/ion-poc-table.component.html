@@ -1,0 +1,15 @@
+<ion-grid>
+  <ion-row class="header-row" >
+    <ng-container *ngFor="let header of headers">
+      <ion-col size="4" size-md="4" class="header-col" class="text-align-center">{{ header | uppercase }}</ion-col>
+    </ng-container>
+  </ion-row>
+
+  <ng-container *ngFor="let row of rows">
+    <ion-row class="data-row">
+      <ion-col size="4" size-md="4" *ngFor="let header of headers" class="header === 'price' ? text-align-center : dynamic-col">
+        <div class="content">{{ row[header] }}</div>
+      </ion-col>
+    </ion-row>
+  </ng-container>
+</ion-grid>

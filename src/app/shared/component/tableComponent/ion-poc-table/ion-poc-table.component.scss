@@ -1,0 +1,30 @@
+.header-row {
+  background-color: var(--light-color);
+  border-bottom: 1px solid var(--dark-color);
+  font-weight: bold;
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+.data-row {
+  border-bottom: .5px solid var(--light-color);
+  padding: 12px 0;
+  border-radius: 12px;
+
+}
+
+.dynamic-col {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+
+}
+
+.text-align-center {
+ text-align: center;
+ color: var(--dark-color);
+
+
+}
+

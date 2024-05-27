@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button  text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Pie Chart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="secondary" class="ion-padding">
+  <ion-list>
+
+    <ion-item>
+      <ion-select   label="Select Year" abel-placement="fixed" placeholder="Favorite Fruit"  [(ngModel)]="selectedYear" (ionChange)="onYearChange()">
+        <ion-select-option *ngFor="let year of getAvailableYears()" [value]="year">{{ year }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+    
+  <div class="chartContainer">
+    <canvas id="pieChart"></canvas>
+  </div>
+
+  
+</ion-content>

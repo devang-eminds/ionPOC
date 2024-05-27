@@ -8,20 +8,20 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {
   ReactiveFormsModule,
-  FormBuilder,
-  FormGroup,
-  Validators,
 } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginPage } from './login/login.page';
+import { LoginPage } from './screeens/login/login.page';
 import { FormsModule } from '@angular/forms';
 import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideStorage, getStorage } from '@angular/fire/storage';
-import { DashboardPage } from './dashboard/dashboard.page';
+import { DashboardPage } from './screeens/dashboard/dashboard.page';
+import { SharedModule } from './shared/shared.module';  
+import { ProductsService } from './service/products/products.service';
+import { PopulationService } from './service/population/population.service';
 
-const firebaseConfig = {
+export const firebaseConfig = {   
   apiKey: 'AIzaSyBklWbYyyB40od_xBMTEwk6KO7Z3-KZnP8',
   authDomain: 'ionpoc-fd800.firebaseapp.com',
   projectId: 'ionpoc-fd800',
@@ -42,18 +42,21 @@ const firebaseConfig = {
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    SharedModule,
+    RouterModule.forRoot([]),
     RouterModule.forChild([
       {
         path: '',
         component: localStorage.getItem('ionPOC_auth_token')  ? DashboardPage : LoginPage,
       },
     ]),
+    
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     provideStorage(() => getStorage()),
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },ProductsService, PopulationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

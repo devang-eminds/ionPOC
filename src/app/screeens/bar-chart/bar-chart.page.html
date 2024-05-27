@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button  text="">
+      </ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Bar Chart
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="secondary" class="ion-padding">
+  <ion-list>
+  <ion-item>
+    <ion-select   label="Select State" abel-placement="fixed" placeholder="Select State" [(ngModel)]="selectedState" (ionChange)="onStateChange()">
+      <ion-select-option *ngFor="let state of stateKeys" [value]="state">{{ state }}</ion-select-option>
+    </ion-select>
+  </ion-item>
+  </ion-list>
+
+
+  <div class="chart-container">
+    <canvas id="barChart"></canvas>
+  </div>
+</ion-content>

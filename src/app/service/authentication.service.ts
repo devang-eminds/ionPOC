@@ -17,30 +17,6 @@ export class AuthService {
 
   constructor(private http: HttpClient, private route: Router) {}
 
-  login(username: string, password: string): Observable<any> {
-    const headers = new HttpHeaders().set('Content-Type', 'application/json');
-
-    return this.http
-      .post<any>(
-        `${this.apiUrl}/auth/login`,
-        { username, password },
-        { headers }
-      )
-      .pipe(
-        catchError(async (error: HttpErrorResponse) => {
-          if (error.status === 0 || error.status === 403) {
-            console.log('CORS error. Returning dummy success response.');
-            await localStorage.setItem(
-              this.tokenKey,
-              'abjkasbdjkbasjdbakbkasasdasdadkjbakdbab'
-            );
-            return of({ success: true, message: 'Dummy success response' });
-          } else {
-            throw error;
-          }
-        })
-      );
-  }
 
   saveToken(token: string) {
     localStorage.setItem(this.tokenKey, token);

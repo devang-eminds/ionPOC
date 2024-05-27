@@ -21,7 +21,7 @@ describe('AuthService', () => {
   });
 
   afterEach(() => {
-    httpTestingController.verify(); // Ensure that there are no outstanding requests
+    httpTestingController.verify(); 
   });
 
   it('should fetch data', () => {
